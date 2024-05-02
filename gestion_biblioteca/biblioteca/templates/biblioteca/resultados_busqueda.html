@@ -1,0 +1,14 @@
+{% extends 'biblioteca/base.html' %}
+
+{% block content %}
+    <h1>Resultados de Búsqueda para '{{ query }}'</h1>
+    {% if resultados %}
+        <ul>
+        {% for libro in resultados %}
+            <li>{{ libro.titulo }} por {{ libro.autor }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No se encontraron libros.</p>
+    {% endif %}
+{% endblock %}

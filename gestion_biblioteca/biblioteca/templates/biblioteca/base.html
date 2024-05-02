@@ -1,0 +1,24 @@
+{% load static %}  
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Biblioteca{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}"> 
+</head>
+<body>
+    <div class="menu">
+        <ul>
+            <li><a href="{% url 'index' %}">Inicio</a></li>
+            <li><a href="{% url 'agregar_usuario' %}">Agregar Usuario</a></li>
+            <li><a href="{% url 'agregar_libro' %}">Agregar Libro</a></li>
+            <li><a href="{% url 'agregar_prestamo' %}">Agregar Préstamo</a></li>
+            <li><a href="{% url 'buscar_libro' %}">Buscar Libro</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

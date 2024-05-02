@@ -1,0 +1,10 @@
+{% extends 'biblioteca/base.html' %}
+
+{% block content %}
+    <h1>Buscar Libro</h1>
+    <form method="get">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Buscar</button>
+    </form>
+{% endblock %}
